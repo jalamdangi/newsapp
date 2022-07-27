@@ -10,7 +10,7 @@ const Login = () => {
         const userData = localStorage.getItem('userInfo');
         const userInfo = JSON.parse(userData);
         let { email, password } = userInfo;
-        if (loginemail == email && loginpassword === password) {
+        if (loginemail === email && loginpassword === password) {
             navigate('/home')
         }
         else {

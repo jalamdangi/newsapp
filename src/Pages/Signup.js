@@ -9,7 +9,7 @@ const Signup = () => {
     const [password, setPassword] = useState('')
     let userData = { name, email, password };
     const getUserData = () => {
-        if (!name && !email && !password) {
+        if (!name || !email || !password) {
             alert('Please Enter Proper Details')
         } else {
             let userInfo = JSON.stringify(userData);
