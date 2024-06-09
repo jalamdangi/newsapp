@@ -7,10 +7,10 @@ const Paymentpage = () => {
     // const [data, setData] = useState({});
     const itemsArray = localStorage.getItem('itemsArray');
     const productsArray = JSON.parse(itemsArray);
-    
     return (
         <div>
-            <div className="container">
+            {!productsArray ? <><h2 className='text-center'>Please Add Items To Cart</h2><h4 className='text-center'><a href="/products" className='text-center'>Go Back</a></h4></>
+            :<div className="container">
                 <h4 className='text-center p-3'>Your Total Products</h4>
                 {productsArray.map((item, index) => {
                     return (
@@ -30,7 +30,7 @@ const Paymentpage = () => {
                         <button onClick={()=>navigate('/checkout')} className='btn btn-success w-100 p-3'>Make Payment</button>
                     </div>
                 </div>
-            </div>
+            </div>}
         </div>
     )
 }
